@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reg Form</title>
+ 
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<div class=main>
+
+<table align="center">
+<form>
+<tr>
+<caption style="font-size:30px; color:#9900cc;"><b>Registration Form</b></caption>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+<tr>
+<td><b>First Name:</b></td>
+<td><input type="text" id="fname" name="fname" title="enter your firstname here" onfocus="myFocus(this)" onblur="myBlur(this)" oninput="changing(this, firstname)"></td>
+<td><p id="firstname"></p></td>
+</tr>
+
+<tr>
+<td><b>Last Name:<b></td>
+<td><input type="text" id="lname" name="lname" title="enter your lastname here" onfocus="myFocus(this)" onblur="myBlur(this)" oninput="changing(this,lastname)"></td>
+<td><p id="lastname"></p></td>
+</tr>
+
+<tr>
+<td><b>Gender:<b></td>
+<td><input type="radio" name="gender" value="male">Male
+<input type="radio" name="gender" value="female">Female
+<input type="radio" name="gender" value="other">Other</td>
+<tr>
+
+<tr>
+<td><b>E-mail:<b></td>
+<td><input type="text"  id="Email" name="email" title="enter your email here" onfocus="myFocus(this)" onblur="myBlur(this)" oninput="changing(this,email)"></td>
+<td><p id="email"></p></td>
+</tr>
+
+<tr>
+<td><b>Confirm E-mail:<b></td>
+<td><input type="text" id="Cemail" name="cemail" title="enter your confirm email here" onfocus="myFocus(this)" onblur="myBlur(this)" oninput="changing(this,confirmemail)"></td>
+<td><p id="confirmemail"></p></td>
+</tr>
+<tr>
+<td><b>Password:</b></td>
+<td><input type="password" id="Pwd" name="pwd" title="enter your password here" onfocus="myFocus(this)" onblur="myBlur(this)" oninput="changing(this,password)"></td>
+<td><p id="password"></p></td>
+</tr>
+<tr>
+<td><b>Confirm Password:<b></td>
+<td><input type="password" id="Cpwd" name="cpwd" title="enter your confirm password here" onfocus="myFocus(this)" onblur="myBlur(this)" oninput="changing(this,confirmpassword)"></td>
+<td><p id="confirmpassword"></p></td>
+</tr>
+<tr>
+<td colspan=3><hr></td>
+</tr>
+
+<tr>
+<td><b>Qualification:<b></td>
+<td>
+<select id="qual" name="qual" onchange="myChange()">
+<option value="none">select</option>
+<option value="SSC">SSC</option>
+<option value="Intermediate">Intermediate</option>
+<option value="Graduation">Graduation</option>
+<option value="PostGraduation">PostGraduation</option>
+</select>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<select id="ssc" name="ssc" onchange="myChange1()">
+<option value="none">select</option>
+<option value="CBSE">CBSE</option>
+<option value="ICSC">ICSC</option>
+<option value="StateBoard">StateBoard</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td colspan=2>
+<select id="stateboard" name="stateboard">
+<option value="none">select</option>
+<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="ArunachalPradesh">ArunachalPradesh</option>
+<option value="Telangana">Telangana</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Maharashta">Maharashta</option>
+<option value="MadyaPradesh">MadyaPradesh</option>
+<option value="Kerala">Kerala</option>
+</select>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<select id="graduation" name="graduation" onchange="myChange2()">
+<option value="none">select</option>
+<option value="BE">BE</option>
+<option value="BTech">BTech</option>
+<option value="BSC">BSC</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td colspan=2>
+<select id="BTech" name="BTech" >
+<option value="none">select</option>
+<option value="CSE">CSE</option>
+<option value="ECE">ECE</option>
+<option value="EEE">EEE</option>
+<option value="ME">ME</option>
+<option value="CE">CE</option>
+<option value="Chem">Chem</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td colspan=2>
+<select id="postgrad" name="postgrad">
+<option value="none">select</option>
+<option value="MS">MS</option>
+<option value="M.Tech">M.Tech</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td><b>Interests:</b></td>
+<tr>
+<tr style="border:1px solid black;">
+<td><input type="checkbox" name="interests[]" value="photography" onclick="myCheck()">Photography</td>
+<td><input type="checkbox" name="interests[]" value="cooking" onclick="myCheck()">Cooking</td>
+<td><input type="checkbox" name="interests[]" value="travelling" onclick="myCheck()">Travelling</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="interests[]" value="Playing" onclick="myCheck()">Playing</td>
+<td><input type="checkbox" name="interests[]" value="Singing" onclick="myCheck()">Singing</td>
+<td><input type="checkbox" name="interests[]" value="drawing" onclick="myCheck()">Drawing</td>
+</tr>
+
+<tr>
+<td><input type="submit" value="Reset" onclick="reset()"></td>
+<td><input type="submit" value="Submit" ></td>
+</tr>
+
+
+</form>
+</table>
+
+</div>
+
+<script type="text/javascript">
+function myFocus(x){
+	x.style.backgroundColor="yellow";
+};
+function myBlur(x){
+	x.style.backgroundColor="";
+
+	if(x.getAttribute("id")==="Cemail")
+	{
+		var email=document.getElementById("Email").value;
+		var cemail=document.getElementById("Cemail").value;
+		if(email!=cemail)
+		{
+			document.getElementById("confirmemail").innerHTML="Email dnt match";
+		}
+	}
+	if(x.getAttribute("id")==="Cpwd")
+	{
+		var pwd=document.getElementById("Pwd").value;
+		var cpwd=document.getElementById("Cpwd").value;
+		if(pwd!=cpwd)
+		{
+			document.getElementById("confirmpassword").innerHTML="password dnt match;";
+		}
+	}
+	/*if(x.getAttribute("id")==="fname"||"lname"||"Email"||"Cemail"||"Pwd"||"Cpwd")
+	{
+		var text = document.getElementById(x.getAttribute('id'));
+		if(text.value.length===0) 
+		{
+			text.parentNode.nextSibling.firstChild.innerHTML = "you dnt leave empty";
+		}
+	}*/
+	if(x.getAttribute("id")==="fname")
+	{
+		if(fname.value.length===0)
+		{
+			document.getElementById("firstname").innerHTML="you dnt leave empty";
+		}
+	}
+	if(x.getAttribute("id")==="lname")
+	{
+		if(lname.value.length===0)
+		{
+			document.getElementById("lastname").innerHTML="you dnt leave empty";
+		}
+	}
+	if(x.getAttribute("id")==="Email")
+	{
+		if(Email.value.length===0)
+		{
+			document.getElementById("email").innerHTML="you dnt leave empty";
+		}
+	}
+	if(x.getAttribute("id")==="Cemail")
+	{
+		if(Cemail.value.length===0)
+		{
+			document.getElementById("confirmemail").innerHTML="you dnt leave empty";
+		}
+	}
+	if(x.getAttribute("id")==="Pwd")
+	{
+		if(Pwd.value.length===0)
+		{
+			document.getElementById("password").innerHTML="you dnt leave empty";
+		}
+	}
+	if(x.getAttribute("id")==="Cpwd")
+	{
+		if(Cpwd.value.length===0)
+		{
+			document.getElementById("confirmpassword").innerHTML="you dnt leave empty";
+		}
+	}	
+};
+function changing(inputBox, messageBox) {
+    if(inputBox.value.length>0) {
+		messageBox.innerHTML = "";
+	}
+};
+function myChange(){
+	if(document.getElementById("qual").value==="SSC"||document.getElementById("qual").value==="Intermediate")
+	{
+		document.getElementById("ssc").style.display="block";
+		document.getElementById("graduation").style.display="none";
+		document.getElementById("postgrad").style.display="none";
+		document.getElementById("stateboard").style.display="none";
+		document.getElementById("BTech").style.display="none";
+	}
+	else if(document.getElementById("qual").value==="Graduation")
+	{
+		document.getElementById("graduation").style.display="block";
+		document.getElementById("ssc").style.display="none";
+		document.getElementById("postgrad").style.display="none";
+		document.getElementById("stateboard").style.display="none";
+		document.getElementById("BTech").style.display="none";
+	}
+	else if(document.getElementById("qual").value==="PostGraduation")
+	{
+		document.getElementById("postgrad").style.display="block";
+		document.getElementById("ssc").style.display="none";
+		document.getElementById("graduation").style.display="none";
+		document.getElementById("stateboard").style.display="none";
+		document.getElementById("BTech").style.display="none";
+	}
+
+}
+function myChange1(){
+	if(document.getElementById("ssc").value==="StateBoard")
+	{
+		document.getElementById("stateboard").style.display="block";
+		document.getElementById("ssc").style.display="none";
+		document.getElementById("graduation").style.display="none";
+		document.getElementById("postgrad").style.display="none";
+		document.getElementById("BTech").style.display="none";
+	}
+	
+}
+function myChange2(){
+	if(document.getElementById("graduation").value==="BTech")
+	{
+		document.getElementById("BTech").style.display="block";
+		document.getElementById("ssc").style.display="none";
+		document.getElementById("graduation").style.display="none";
+		document.getElementById("postgrad").style.display="none";
+		document.getElementById("stateboard").style.display="none";
+	}
+}
+function myCheck(){
+var names=document.getElementsByName("interests[]");
+var values=[];
+for(var m=0;m<names.length;m++)
+{
+	if(names[m].checked==true)
+	{
+		values.push(names[m].value);
+	}
+	
+}
+console.log(values);
+}
+
+</script>
+
+</body>
+
+</html>

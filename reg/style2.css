@@ -1,0 +1,45 @@
+.main{
+border-color:pink;
+width:800px;
+height:900px;
+padding:5px;
+margin:0 auto;
+background-color:#ffffcc;
+border-style:ridge ;
+}
+tr{
+line-height:35px;
+}
+#firstname{
+color:red;
+}
+#lastname{
+color:red;
+}
+#email{
+color:red;
+}
+#confirmemail{
+color:red;
+}
+#password{
+color:red;
+}
+#confirmpassword{
+color:red;
+}
+#ssc{
+display:none;
+}
+#stateboard{
+display:none;	
+}
+#graduation{
+	display:none;
+}
+#postgrad{
+	display:none;
+}
+#BTech{
+	display:none;
+}

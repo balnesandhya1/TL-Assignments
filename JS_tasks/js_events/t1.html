@@ -1,0 +1,59 @@
+<!Doctype html>
+<html>
+<head>
+<title>Javascript Events</title>
+</head>
+<body>
+<p id="demo">JavaScript can change HTML content</p>
+
+<button type="button" onclick="document.getElementById('demo').innerHTML= 'hello JS'">Click me</button>
+Name:<input type="text" value="enter name" onselect="mySelect()">
+<input type="checkbox" value="male" name="gender">Male
+<input type="checkbox" value="female" name="gender">Female
+
+<input type="radio" value="male" name="gender">Male
+<input type="radio" value="female" name="gender">Female
+
+<select id="myselect" onchange="myChange()" size="4">
+<option value="audi">audi</option>
+<option value="bmw">bmw</option>
+<option value="swift">swift</option>
+<option value="audi">audi</option>
+<option value="bmw">bmw</option>
+<option value="swift">swift</option>
+<option value="audi">audi</option>
+<option value="bmw">bmw</option>
+<option value="swift">swift</option>
+</select>
+<p id="demo1"></p>
+
+<p id="demo2" onclick="myClick()">click me chnge my color</p>
+name:<input type="text" onfocus="myFocus(this)" onblur="myBlur(this)">
+<p id="demo3" onmouseover="mouse()" onmouseout="mouse1()">The function mouse() is triggered when the user moves the mouse pointer over the text</p>
+
+<script>
+function mySelect(){
+alert("some text is selected");
+}
+function myChange(){
+var x=document.getElementById("myselect").value;
+document.getElementById("demo1").innerHTML="selected:"+x;
+}
+function myClick(){
+document.getElementById("demo2").style.color="red";
+}
+function myFocus(x){
+x.style.background="yellow";
+}
+function myBlur(x){
+x.style.background="red";
+} 
+function mouse(){
+document.getElementById("demo3").style.color="green";
+}
+function mouse1(){
+document.getElementById("demo3").style.color="blue";
+}
+</script>
+</body>
+</html>

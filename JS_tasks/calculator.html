@@ -1,0 +1,97 @@
+<!Doctype html>
+<html>
+<head>
+<title>Task</title>
+<link rel="stylesheet" href="style1.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<form>
+<div class="operators">
+
+<b>Num1:<b><input type="text" id="num1" size="8px">
+<b>Num2:<b><input type="text" id="num2" size="8px">
+<b>=Result:</b><input type="text" id="Result" size="8px"><br>
+</div>
+<div class="">
+  <button type="button" class="btn btn-primary" onclick="addition()">Add</button>
+  <button type="button" class="btn btn-primary" onclick="subtraction()">Sub</button>
+  <button type="button" class="btn btn-primary" onclick="multiplication()">Mul</button>
+  <button type="button" class="btn btn-primary" onclick="division()">Div</button>
+</form>
+</div>
+<script type="text/javascript">
+var doc=document;
+var addition=function()
+{
+var n1=parseInt(doc.getElementById("num1").value);
+var n2=parseInt(doc.getElementById("num2").value);
+var result=n1 + n2;
+if(isNaN(n1)|| isNaN(n2))
+{
+alert("plz enter a number");
+}
+
+else{
+doc.getElementById("Result").value=result;
+console.log(result);
+}
+};
+var subtraction=function()
+{
+var n1=parseInt(doc.getElementById("num1").value);
+var n2=parseInt(doc.getElementById("num2").value);
+var result=n1 - n2;
+doc.getElementById("Result").value=result;
+console.log(result);
+if(isNaN(n1)|| isNaN(n2))
+{
+alert("plz enter a number");
+}
+else{
+doc.getElementById("Result").value=result;
+console.log(result);
+}
+
+};
+var multiplication=function()
+{
+var n1=parseInt(doc.getElementById("num1").value);
+var n2=parseInt(doc.getElementById("num2").value);
+var result=n1 * n2;
+doc.getElementById("Result").value=result;
+console.log(result);
+if(isNaN(n1)|| isNaN(n2))
+{
+alert("plz enter a number");
+}
+else{
+doc.getElementById("Result").value=result;
+//console.log(result);
+}
+
+};
+var division=function()
+{
+var n1=parseInt(doc.getElementById("num1").value);
+var n2=parseInt(doc.getElementById("num2").value);
+
+var result=n1/n2;
+if(n2==0||(isNaN(n1)|| isNaN(n2)))
+{
+alert("plz enter valid value");
+}
+else{
+doc.getElementById("Result").value=result;
+console.log(result);
+}
+};
+
+</script>
+</body>
+</html>
